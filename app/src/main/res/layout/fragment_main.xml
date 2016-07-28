@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageViewUser"
+                android:src="@mipmap/ic_launcher"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:id="@+id/textViewUserName"
+                android:layout_alignBottom="@+id/imageViewUser"
+                android:layout_toRightOf="@+id/imageViewUser"
+                android:layout_toEndOf="@+id/imageViewUser" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/textViewPostTime"
+                android:layout_below="@+id/imageViewUser"
+                android:layout_toRightOf="@+id/imageViewUser"
+                android:layout_toEndOf="@+id/imageViewUser" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/postStatus"
+                android:src="@drawable/pubimg"
+
+                android:layout_below="@+id/textViewUserName"
+                android:layout_toRightOf="@+id/textViewPostTime"
+                android:layout_toEndOf="@+id/textViewPostTime"
+                android:layout_alignBottom="@+id/textViewPostTime" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textViewMainPostTxt"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="189dp"
+            android:weightSum="1">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageViewPostImg"
+                android:src="@mipmap/ic_launcher"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.38"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/tableRow" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/tableRow"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/thumbUp"
+                    android:src="@drawable/likeinteractive"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/imageViewPostImg"
+                    android:layout_toRightOf="@+id/imageViewPostImg"
+                    android:layout_toEndOf="@+id/imageViewPostImg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/likesTxt"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@+id/imageViewPostImg"
+                    android:layout_toRightOf="@+id/imageViewPostImg"
+                    android:layout_toEndOf="@+id/imageViewPostImg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/commentsTxt"
+                    android:layout_below="@+id/imageViewPostImg"
+                    android:layout_toRightOf="@+id/imageViewPostImg"
+                    android:layout_toEndOf="@+id/imageViewPostImg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/shareTxt"
+                    android:layout_below="@+id/imageViewPostImg"
+                    android:layout_toRightOf="@+id/imageViewPostImg"
+                    android:layout_toEndOf="@+id/imageViewPostImg" />
+
+            </TableRow>
+
+        </RelativeLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Like"
+            android:id="@+id/button"
+                android:layout_weight="0.14" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comment"
+                android:id="@+id/button3"
+                android:layout_weight="0.14" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share"
+                android:id="@+id/button2"
+                android:layout_weight="0.14" />
+        </TableRow>
+
+</LinearLayout>
+
