@@ -1,5 +1,7 @@
 package com.mal.wweqqful.pokeme;
 
+import android.content.Context;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -10,8 +12,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 
@@ -36,9 +41,9 @@ public class MainActivityFragment extends Fragment {
     private TextView postLikesTxt;
     private TextView postCmtTxt;
     private TextView postShareTxt;
-
-
-
+    private ImageView userImg;
+    private ImageView postImg;
+    private Context rootViewContxt;
 
     public MainActivityFragment() {
         postFetcher = new FetchPost();
@@ -48,6 +53,7 @@ public class MainActivityFragment extends Fragment {
         super.onCreate(savedInstanceState);
         // Add this line in order for this fragment to handle menu events.
         setHasOptionsMenu(true);
+
     }
 
     @Override
@@ -72,13 +78,16 @@ public class MainActivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        rootViewContxt = rootView.getContext();
         // Construct post objects
         userName = (TextView) rootView.findViewById(R.id.textViewUserName);
+        userImg = (ImageView) rootView.findViewById(R.id.imageViewUser);
         postTime = (TextView) rootView.findViewById(R.id.textViewPostTime);
         postMainTxt = (TextView) rootView.findViewById(R.id.textViewMainPostTxt);
         postLikesTxt = (TextView) rootView.findViewById(R.id.likesTxt);
         postCmtTxt = (TextView) rootView.findViewById(R.id.commentsTxt);
         postShareTxt = (TextView) rootView.findViewById(R.id.shareTxt);
+        postImg = (ImageView) rootView.findViewById(R.id.imageViewPostImg);
         // Call Post Async Task to fetch post
         postFetcher.execute();
         return rootView;
@@ -169,8 +178,16 @@ public class MainActivityFragment extends Fragment {
 
     private void updatePostView(){
         userName.setText(currentPost.getUserPost().getUserName());
+        Picasso.with(rootViewContxt)
+                .load(currentPost.getUserPost().getImgUrl())
+                .resize(50, 50)
+                .into(userImg);
         postTime.setText(currentPost.getPostTimeTxt());
         postMainTxt.setText(currentPost.getPostTxt());
+        Picasso.with(rootViewContxt)
+                .load(currentPost.getPostImgUrl())
+                .resize(1000, 1000)
+                .into(postImg);
         postLikesTxt.setText(currentPost.getPostLikesTxt());
         postCmtTxt.setText(currentPost.getPostCommentsTxt());
         postShareTxt.setText(currentPost.getPostShareTxt());

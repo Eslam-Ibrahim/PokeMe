@@ -99,7 +99,8 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:id="@+id/likesTxt"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="25dp"
+                    android:textSize="12sp"
                     android:layout_below="@+id/imageViewPostImg"
                     android:layout_toRightOf="@+id/imageViewPostImg"
                     android:layout_toEndOf="@+id/imageViewPostImg" />
@@ -109,6 +110,7 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:id="@+id/commentsTxt"
+                    android:textSize="12sp"
                     android:layout_below="@+id/imageViewPostImg"
                     android:layout_toRightOf="@+id/imageViewPostImg"
                     android:layout_toEndOf="@+id/imageViewPostImg" />
@@ -118,6 +120,8 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:id="@+id/shareTxt"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="12sp"
                     android:layout_below="@+id/imageViewPostImg"
                     android:layout_toRightOf="@+id/imageViewPostImg"
                     android:layout_toEndOf="@+id/imageViewPostImg" />
